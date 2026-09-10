@@ -4,11 +4,13 @@ import '../models/user.dart';
 
 class UserRepository {
   UserRepository({FirebaseFirestore? firestore})
-      : _firestore = firestore ?? FirebaseFirestore.instance;
+    : _firestore = firestore ?? FirebaseFirestore.instance;
 
   final FirebaseFirestore _firestore;
 
-  CollectionReference<UserModel> get _users => _firestore.collection('users').withConverter<UserModel>(
+  CollectionReference<UserModel> get _users => _firestore
+      .collection('users')
+      .withConverter<UserModel>(
         fromFirestore: UserModel.fromFirestore,
         toFirestore: (user, _) => user.toFirestore(),
       );
@@ -25,7 +27,7 @@ class UserRepository {
   }) {
     return _firestore.collection('users').doc(uid).update({
       'name': name.trim(),
-      'phone': phone.replaceAll(RegExp(r'\\D'), ''),
+      'phone': phone.replaceAll(RegExp(r'\D'), ''),
       'updatedAt': FieldValue.serverTimestamp(),
     });
   }

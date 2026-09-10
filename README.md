@@ -1,22 +1,21 @@
-<<<<<<< HEAD
-# mobileprimeiro
+# Redes e Infraestrutura
 
-A new Flutter project.
+Aplicativo Flutter de catálogo de equipamentos de rede. Mantém autenticação e
+perfil no Firebase e oferece um CRUD REST de produtos no menu **CRUD API**.
 
-## Getting Started
+## Executar
 
-This project is a starting point for a Flutter application.
+```powershell
+flutter pub get
+flutter run --dart-define=JSONBIN_INDEX_BIN_ID=SEU_BIN_DE_INDICE --dart-define=JSONBIN_ACCESS_KEY=SUA_ACCESS_KEY
+```
 
-A few resources to get you started if this is your first Flutter project:
+Consulte [JSONBIN_SETUP.md](JSONBIN_SETUP.md) para configurar o JSONBin.io sem
+incluir credenciais no repositório.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Verificações
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# Redes-e-Infraestruturas
-Projeto em desenvolvimento para vendas de produtos 
->>>>>>> 29626ab0997958a6e5880c64011e78faa6a36699
+```powershell
+flutter analyze
+flutter test
+```
